@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="cn">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+
+    <title>FBP Playground - 滤波反投影算法在线仿真</title>
+    <link rel="icon" href="./favicon.ico" type="image/x-icon" />
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/fontawesome.min.css" rel="stylesheet">
+    <link href="css/mdb.min.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+</head>
+
+<body data-spy="scroll" data-target="#navbar-main" data-offset="150">
+
+    <header>
+
+        <nav class="navbar fixed-top navbar-expand-lg navbar-light white scrolling-navbar">
+            <div class="container">
+
+                <a class="navbar-brand waves-effect" href="#" target="_blank">
+                    <strong class="blue-text">FBP Playground</strong>
+                </a>
+
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+
+                    <nav class="navbar-nav mr-auto" id="navbar-main" role="navigation">
+                        <li class="nav-item">
+                            <a class="nav-link waves-effect" href="#home">首页</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link waves-effect" href="#section1">选择</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link waves-effect" href="#section2">正投影</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link waves-effect" href="#section3">滤波</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link waves-effect" href="#section4">反投影</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link waves-effect" href="#section5">结果</a>
+                        </li>
+                    </nav>
+
+                    <ul class="navbar-nav nav-flex-icons">
+
+                        <li class="nav-item">
+                            <a href="https://github.com/mrieecn/FBP-Playground" class="nav-link waves-effect" target="_blank">
+                                <i class="fab fa-github fa-2x mr-2"></i>
+                            </a>
+                        </li>
+
+                    </ul>
+
+
+
+
+                </div>
+
+            </div>
+        </nav>
+        <!-- Navbar -->
+
+    </header>
+    <!--Main Navigation-->
+
+    <!--Main layout-->
+    <main>
+        <div class="container">
+            <section id="home">
+                <div class="card wow fadeIn" id="intro">
+
+
+                    <div class="card-body text-white text-center py-5 px-5 my-5">
+
+                        <h1 class="mb-4 h1-responsive">
+                            <strong>FBP Playground</strong>
+                        </h1>
+                        <h4 class="h4-responsive">
+                            <strong>滤波反投影算法在线仿真</strong>
+                        </h4>
+                        <p class="mt-4">
+                            <strong>SJTU BI909 课程个人作业</strong>
+                        </p>
+                    </div>
+                </div>
+            </section>
+
+
+            <section id="section1">
+
+                <div class="wow fadeIn">
+                    <h2 class="h2-responsive text-center mb-5">选择截面图片</h2>
+                </div>
+                <row class="row wow fadeIn">
+                    <colum class="col-6 col-lg-3 mb-4">
+                        <div class="card wow fadeIn">
+                            <div class="view overlay card-noact active" id="ximg1">
+                                <img id="img1" src="./img/sl.png" class="img-fluid" />
+                                <a onclick="cimg1()">
+                                    <div class="mask waves-effect waves-light">
+                                        <div class="card-body flex-center">
+                                            <h4 class="h4-responsive photo-intro">Modified Shepp-Logan</h4>
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                    </colum>
+                    <colum class="col-6 col-lg-3 mb-4">
+                        <div class="card wow fadeIn">
+                            <div class="view overlay card-noact" id="ximg2">
+                                <img id="img2" src="./img/lung.png" class="img-fluid" />
+                                <a onclick="cimg2()">
+                                    <div class="mask waves-effect waves-light">
+                                        <div class="card-body flex-center">
+                                            <h4 class="h4-responsive photo-intro">肺部水平切面</h4>
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                    </colum>
+                    <colum class="col-6 col-lg-3 mb-4">
+                        <div class="card wow fadeIn">
+                            <div class="view overlay card-noact" id="ximg3">
+                                <img id="img3" src="./img/bone.png" class="img-fluid" />
+                                <a onclick="cimg3()">
+                                    <div class="mask waves-effect waves-light">
+                                        <div class="card-body flex-center">
+                                            <h4 class="h4-responsive photo-intro">锁骨水平切面</h4>
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                    </colum>
+                    <colum class="col-6 col-lg-3 mb-4">
+                        <div class="card wow fadeIn">
+                            <div class="view overlay card-noact" id="ximg4">
+                                <img id="img4" src="./img/color.png" class="img-fluid" />
+                                <a onclick="cimg4()">
+                                    <div class="mask waves-effect waves-light">
+                                        <div class="card-body flex-center">
+                                            <h4 class="h4-responsive photo-intro">非医学图片</h4>
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                    </colum>
+
+                </row>
+                <row class="row wow fadeIn justify-content-center mt-4">
+                    <div class="input-group mb-3 col-12 col-lg-6">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text">自定义</span>
+                        </div>
+                        <div class="custom-file">
+                            <input id="file" type="file" name="file" class="custom-file-input">
+                            <label id="filelabel" class="custom-file-label" for="file">选择文件</label>
+                        </div>
+                    </div>
+                </row>
+
+            </section>
+            <section id="section2">
+
+                <div class="wow fadeIn">
+                    <h2 class="h2-responsive text-center mb-5">正投影</h2>
+                </div>
+                <row class="row wow fadeIn mb-4">
+                    <colum class="col-12 col-lg-6 mb-4">
+                        <canvas id="afterR" width="729" height="180"></canvas>
+
+                    </colum>
+                    <colum class="col-12 col-lg-6 mb-4 specialcol">
+                        <canvas id="originp" width="512" height="512"></canvas>
+                        <canvas id="oneline" width="769" height="769"></canvas>
+
+                    </colum>
+                </row>
+                <row class="row wow fadeIn align-items-center">
+                    <colum class="col-6 col-lg-2 col-xl-2 mb-4 text-center text-md-right">
+                        <label for="form2">开始角度</label>
+                    </colum>
+                    <colum class="col-6 col-lg-2 col-xl-1 mb-4">
+                        <input type="text" id="form2" class="form-control" value="0">
+                    </colum>
+                    <colum class="col-6 col-lg-2 col-xl-1 mb-4 text-center text-md-right">
+                        <label for="form3">最大角度</label>
+                    </colum>
+                    <colum class="col-6 col-lg-2 col-xl-1 mb-4">
+                        <input type="text" id="form3" class="form-control" value="180">
+                    </colum>
+                    <colum class="col-6 col-lg-1 col-xl-1 mb-4 text-center text-md-right">
+                        <label for="form1">步长</label>
+                    </colum>
+                    <colum class="col-6 col-lg-2 col-xl-1 mb-4">
+                        <input type="text" id="form1" class="form-control" value="1">
+                    </colum>
+                    <colum class="col-12 col-lg-12 col-xl-4 mb-4 text-center">
+                        <button type="button" class="btn btn-primary" id="startR">运行</button>
+                    </colum>
+
+                </row>
+
+            </section>
+            <section id="section3">
+
+                <div class="wow fadeIn">
+                    <h2 class="h2-responsive text-center mb-5">FFT、滤波</h2>
+                </div>
+                <row class="row wow fadeIn mb-4">
+                    <colum class="col-12 col-lg-6">
+                        <canvas id="FFTp" width="1024" height="18"></canvas>
+                    </colum>
+                    <colum class="col-12 col-lg-6">
+                        <canvas id="Hp" width="1024" height="18"></canvas>
+                    </colum>
+                </row>
+                <row class="row wow fadeIn align-items-center">
+                    <colum class="col-12 col-lg-4 mb-4 text-center">
+                        <button type="button" class="btn btn-primary" id="startF">傅里叶变换</button>
+                    </colum>
+                    <colum class="col-12 col-lg-4 mb-4 text-center">
+                        <div class="md-radio">
+                            <input id="r0" type="radio">
+                            <label for="r0">无 滤波</label>
+                        </div>
+                        <div class="md-radio">
+                            <input id="r1" type="radio" checked>
+                            <label for="r1">RL 滤波</label>
+                        </div>
+                        <div class="md-radio">
+                            <input id="r2" type="radio">
+                            <label for="r2">SL 滤波</label>
+                        </div>
+
+                    </colum>
+                    <colum class="col-12 col-lg-4 mb-4 text-center">
+                        <button type="button" class="btn btn-primary" id="startH">进行滤波</button>
+                    </colum>
+                </row>
+            </section>
+            <section id="section4">
+
+                <div class="wow fadeIn">
+                    <h2 class="h2-responsive text-center mb-5">iFFT、反投影</h2>
+                </div>
+                <row class="row wow fadeIn mb-4">
+                    <colum class="col-12 col-lg-6 mb-4">
+                        <canvas id="iFFRp" width="729" height="180"></canvas>
+
+                    </colum>
+                    <colum class="col-12 col-lg-6 mb-4 specialcol">
+                        <canvas id="restorep" width="512" height="512"></canvas>
+                        <canvas id="oneline2" width="769" height="769"></canvas>
+
+                    </colum>
+                </row>
+                <row class="row wow fadeIn align-items-center">
+                    <colum class="col-12 col-lg-12 col-xl-4 mb-4 text-center">
+                        <button type="button" class="btn btn-primary" id="startiF">反傅里叶变换</button>
+                    </colum>
+                    <colum class="col-6 col-lg-2 col-xl-2 mb-4 text-center text-md-right">
+                        <label for="form4">当前角度</label>
+                    </colum>
+                    <colum class="col-6 col-lg-2 col-xl-1 mb-4">
+                        <input type="text" id="form4" class="form-control" value="0">
+                    </colum>
+
+                    <colum class="col-12 col-lg-12 col-xl-4 mb-4 text-center">
+                        <button type="button" class="btn btn-primary" id="startiR">运行反投影</button>
+                    </colum>
+
+                </row>
+            </section>
+            <section id="section5">
+
+                <div class="wow fadeIn">
+                    <h2 class="h2-responsive text-center mb-5">结果比较</h2>
+                </div>
+                <row class="row wow fadeIn mb-2">
+                    <colum class="col-12 col-lg-4 mb-5">
+                        <div class="mb-3">
+                            <canvas id="ans1" width="512" height="512"></canvas>
+                        </div>
+                        <div>
+                            <h4 class="h4-responsive text-center">原始图片</h4>
+                        </div>
+                    </colum>
+                    <colum class="col-12 col-lg-4 mb-5">
+                        <div class="mb-3">
+                            <canvas id="ans2" width="512" height="512"></canvas>
+                        </div>
+                        <div>
+                            <h4 class="h4-responsive text-center">还原图片</h4>
+                        </div>
+
+                    </colum>
+                    <colum class="col-12 col-lg-4 mb-5">
+                        <div class="mb-3">
+                            <canvas id="ans3" width="512" height="512"></canvas>
+                        </div>
+                        <div>
+                            <h4 class="h4-responsive text-center">还原 - 原始</h4>
+                        </div>
+
+                    </colum>
+                </row>
+
+                <row class="row wow fadeIn align-items-center">
+                    <colum class="col-12 mb-4 text-center">
+                        <button type="button" class="btn btn-primary" id="startB">生成对比图</button>
+                    </colum>
+
+                </row>
+                <row class="row wow fadeIn align-items-center">
+                    <colum class="col-12 col-lg-6 mb-4">
+
+                        <div id="linemapx"></div>
+                        <h4 class="h4-responsive text-center">过中心水平方向差值</h4>
+                    </colum>
+                    <colum class="col-12 col-lg-6 mb-4">
+                        <div id="linemapy"></div>
+                        <h4 class="h4-responsive text-center">过中心垂直方向差值</h4>
+                    </colum>
+                </row>
+            </section>
+
+        </div>
+    </main>
+
+
+
+    <footer class="page-footer text-center font-small mdb-color darken-2 mt-4 ">
+        <div class="footer-copyright py-3">
+            by
+            <a class="text-white" data-toggle="tooltip" data-placement="top" title="admin@mriee.com"> MRIEE </a>
+        </div>
+    </footer>
+    <!-- electron compatible
+    <script>
+        window.nodeRequire = require;
+        delete window.require;
+        delete window.exports;
+        delete window.module;
+    </script>
+    -->
+    <script src="js/echarts.common.min.js"></script>
+    <script src="js/jquery-3.2.1.min.js"></script>
+    <script src="js/popper.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/mdb.min.js"></script>
+    <script src="js/newWOW.js"></script>
+    <script src="js/FFTS.js"></script>
+    <script src="js/script.js"></script>
+    <script>
+        new WOW().init();
+        $(function() {
+            $('[data-toggle="tooltip"]').tooltip()
+        })
+    </script>
+</body>
+
+</html>

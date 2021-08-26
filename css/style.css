@@ -1,0 +1,235 @@
+body {
+    font-family: Roboto, Helvetica, Tahoma, Arial, "Heiti SC", "Microsoft YaHei", "WenQuanYi Micro Hei";
+}
+
+#intro {
+    margin-top: 3rem;
+    background: #3a7bd5;
+    background: -webkit-linear-gradient(to right, #3a6073, #3a7bd5);
+    background: -webkit-gradient(linear, left top, right top, from(#3a6073), to(#3a7bd5));
+    background: -webkit-linear-gradient(left, #3a6073, #3a7bd5);
+    background: -o-linear-gradient(left, #3a6073, #3a7bd5);
+    background: linear-gradient(to right, #3a6073, #3a7bd5);
+}
+
+.navbar-brand {
+    margin-right: 1.5rem;
+    font-size: 130%;
+}
+
+.navbar-expand-lg .navbar-nav .nav-link {
+    padding-right: 1rem;
+    padding-left: 1rem;
+}
+
+.nav-link.active {
+    background-color: rgba(0, 0, 0, 0.1);
+}
+
+a .photo-intro {
+    color: white;
+    text-align: center;
+}
+
+.card img {
+    border-radius: .3rem;
+}
+
+.hm-white-my-light .mask {
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
+.card-noact {
+    opacity: 0.7;
+    -webkit-transition: all 0.4s ease-in-out;
+    -o-transition: all 0.4s ease-in-out;
+    transition: all 0.4s ease-in-out;
+}
+
+.card-noact.active {
+    opacity: 1;
+}
+
+.card-noact:hover {
+    opacity: 0.9;
+}
+
+section {
+    padding-top: 7rem;
+    padding-bottom: 3rem;
+}
+
+#afterR,
+#iFFRp {
+    width: 100%;
+    height: 100%;
+    min-height: 50vh;
+    position: relative;
+}
+
+#oneline,
+#oneline2 {
+    z-index: 2;
+    position: relative;
+    top: 0;
+    left: 10%;
+    width: 80%;
+    image-rendering: auto;
+}
+
+#originp,
+#restorep {
+    z-index: 1;
+    position: absolute;
+    top: 16.7%;
+    left: 23.37%;
+    width: 53.26%;
+}
+
+#FFTp,
+#Hp {
+    width: 100%;
+    min-height: 50vh;
+    position: relative;
+}
+
+#linemapx,
+#linemapy {
+    width: 100%;
+    min-height: 50vh;
+    position: relative;
+}
+
+#ans1,
+#ans2,
+#ans3 {
+    width: 100%;
+    height: auto;
+    position: relative;
+}
+
+canvas {
+    height: auto;
+    width: auto;
+    image-rendering: optimizeSpeed;
+    /* STOP SMOOTHING, GIVE ME SPEED  */
+    image-rendering: -moz-crisp-edges;
+    /* Firefox                        */
+    image-rendering: -o-crisp-edges;
+    /* Opera                          */
+    image-rendering: -webkit-optimize-contrast;
+    /* Chrome (and eventually Safari) */
+    image-rendering: pixelated;
+    /* Chrome */
+    image-rendering: optimize-contrast;
+    /* CSS3 Proposed                  */
+    -ms-interpolation-mode: nearest-neighbor;
+    /* IE8+                           */
+}
+
+.bgpage {
+    min-height: 105vh;
+    background-size: cover;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    position: relative;
+    z-index: 1;
+    background-position: center center;
+    background-repeat: no-repeat;
+}
+
+.specialcol {
+    line-height: 0%;
+    padding-left: 0px;
+    padding-right: 0px;
+    z-index: 0;
+}
+
+.tooltip.show {
+    opacity: 1;
+}
+
+label {
+    margin-bottom: 0%;
+}
+
+@keyframes ripple {
+    0% {
+        box-shadow: 0px 0px 0px 1px rgba(0, 0, 0, 0);
+    }
+    50% {
+        box-shadow: 0px 0px 0px 15px rgba(0, 0, 0, 0.1);
+    }
+    100% {
+        box-shadow: 0px 0px 0px 15px rgba(0, 0, 0, 0);
+    }
+}
+
+.custom-file-input:lang(cn)~.custom-file-label::after,
+.custom-file-label::after {
+    content: "浏览";
+}
+
+
+/*
+   following code is modified by others'
+*/
+
+.md-radio {
+    margin: 16px 0;
+}
+
+.md-radio.md-radio-inline {
+    display: inline-block;
+}
+
+.md-radio input[type=radio] {
+    display: none;
+}
+
+.md-radio input[type=radio]:checked+label:before {
+    border-color: #4285f4;
+    animation: ripple 0.2s linear forwards;
+}
+
+.md-radio input[type=radio]:checked+label:after {
+    transform: scale(1);
+}
+
+.md-radio label {
+    display: inline-block;
+    height: 20px;
+    position: relative;
+    padding: 0 30px;
+    margin-bottom: 0;
+    cursor: pointer;
+    vertical-align: bottom;
+}
+
+.md-radio label:before,
+.md-radio label:after {
+    position: absolute;
+    content: "";
+    border-radius: 50%;
+    transition: all 0.3s ease;
+    transition-property: transform, border-color;
+}
+
+.md-radio label:before {
+    left: 0;
+    top: 0;
+    width: 20px;
+    height: 20px;
+    border: 2px solid rgba(0, 0, 0, 0.54);
+}
+
+.md-radio label:after {
+    top: 5px;
+    left: 5px;
+    width: 10px;
+    height: 10px;
+    transform: scale(0);
+    background: #4285f4;
+}
